@@ -6,10 +6,29 @@
 
 The aim is to containerise the standard Linux CLI version of the binary into a dockerised container.
 
+## Prerequisite
+This section only applies to running on **`ARM`** platforms as the image and its underlying binary are originally compiled for **`x86_64`** (64-Bit) Intel/AMD-based architectures.
+
+To run the docker image on ARM platforms such as Raspberry Pi, it needs to run on an emulation layer.
+
+```yaml
+sudo docker run --privileged --rm tonistiigi/binfmt --install all
+```
+Now the non-native docker image will run, which previously woudln't without enabling the emulation layer first.
+
+The downside to the command above is that on restart, it needs to be enabled again. Therefore, a permanent solution is to have it auto-start as a service.
+```groovy
+sudo cp docker.binfmt.service /etc/systemd/system
+sudo systemctl enable docker.binfmt.service
+sudo systemctl start docker.binfmt.service
+```
+
+This should now work on **`ARM`** platforms such as **`arm64`**, **`arm64v8`**, **`arm32v7`**, `**aarch64**`.
+
 ## Run Usage
 #### Docker Compose
 Via `compose.yml`
-```
+```yaml
 version: '3'
 
 services:
@@ -22,9 +41,12 @@ services:
         - 1.1.1.1
         - 8.8.8.8
 ```
+```yaml
+docker compose up -d
+```
 
 #### Docker run
-```
+```yaml
 docker run -d --restart unless-stopped --name spide xterna/spide-network
 ```
 This will start the application in the background. The alias assigned is `spide`.
@@ -34,10 +56,10 @@ The device running the Spide application will need to be registered in the dashb
 
 To get the device key, you need to run the docker logs command to find the key for registering.
 
-```
+```yaml
 docker logs spide
 ```
-```
+```groovy
 2024/02/07 00:34:47 Build version: 2022-07-12_11:08:44AM-LINUX
 2024/02/07 00:34:47 ENV: prod
 2024/02/07 00:34:47 Device Key:  c253589lk23j523jkhasf904124kj1as8512972215kljasd04asd9085124as3r
@@ -47,7 +69,7 @@ docker logs spide
 2024/02/07 00:34:48 Status: OK
 ```
 If for any reason you can't locate the key, stop the container and start it again. Give it a second or two before fetching the logs again.
-```
+```yaml
 docker stop spide; docker start spide
 ```
 ### Spide Dashboard

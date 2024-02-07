@@ -6,7 +6,7 @@
 
 The aim is to containerise the standard Linux CLI version of the binary into a dockerised container.
 
-## Prerequisite
+## For ARM Platforms Only
 This section only applies to running on **`ARM`** platforms as the image and its underlying binary are originally compiled for **`x86_64`** (64-Bit) Intel/AMD-based architectures.
 
 To run the docker image on ARM platforms such as Raspberry Pi, it needs to run on an emulation layer.

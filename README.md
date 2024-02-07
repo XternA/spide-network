@@ -14,7 +14,7 @@ To run the docker image on ARM platforms such as Raspberry Pi, it needs to run o
 ```yaml
 sudo docker run --privileged --rm tonistiigi/binfmt --install all
 ```
-Now the non-native docker image will run, which previously woudln't without enabling the emulation layer first.
+Now the non-native docker image will run, which previously wouldn't without enabling the emulation layer first.
 
 The downside to the command above is that on restart, it needs to be enabled again. Therefore, a permanent solution is to have it auto-start as a service.
 ```groovy

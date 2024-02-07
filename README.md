@@ -31,8 +31,7 @@ or via (only adding x86_64)
 @reboot docker run --rm --privileged aptman/qus -s -- -p x86_64
 ```
 
-Now the non-native docker image will run, which previously wouldn't without enabling the emulation layer first,
-which means it should now run on **`ARM`** platforms such as **`arm64`**, **`arm64v8`**, **`arm32v7`**, `**aarch64**`.
+The non-native docker image will now run on **`ARM`** platforms such as **`arm64`**, **`arm64v8`**, **`arm32v7`**, **`aarch64`** which previously wouldn't without first enabling the emulation layer.
 
 ## Run Usage
 #### Docker Compose

@@ -12,20 +12,17 @@ This section only applies to running on **`ARM`** platforms as the image and its
 To run the docker image on ARM platforms such as Raspberry Pi, it needs to run on an emulation layer.
 
 ```yaml
-sudo docker run --privileged --rm tonistiigi/binfmt --install all
-```
-Now the non-native docker image will run, which previously wouldn't without enabling the emulation layer first.
-
-The downside to the command above is that on restart, it needs to be enabled again. Therefore, a permanent solution is to have it auto-start as a service.
-```groovy
-sudo cp docker.binfmt.service /etc/systemd/system
-sudo systemctl enable docker.binfmt.service
-sudo systemctl start docker.binfmt.service
+docker run --rm --privileged aptman/qus -s -- -p x86_64
 ```
 
-This should now work on **`ARM`** platforms such as **`arm64`**, **`arm64v8`**, **`arm32v7`**, `**aarch64**`.
+However, on reboot, the emulation must be re-enabled again. Therefore, cron can be used so that the cron scheduler will start the emulation on reboot.
 
-Alternatively, if sticking to the first option, cron is also another option to ensure it gets started on reboot by putting an entry into crontab.
+```yaml
+sudo crontab
+```
+
+Then add the entry and that's it.
+
 ```yaml
 @reboot docker run --privileged --rm tonistiigi/binfmt --install all
 ```
@@ -33,6 +30,9 @@ or via (only adding x86_64)
 ```yaml
 @reboot docker run --rm --privileged aptman/qus -s -- -p x86_64
 ```
+
+Now the non-native docker image will run, which previously wouldn't without enabling the emulation layer first,
+which means it should now run on **`ARM`** platforms such as **`arm64`**, **`arm64v8`**, **`arm32v7`**, `**aarch64**`.
 
 ## Run Usage
 #### Docker Compose

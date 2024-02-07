@@ -25,6 +25,15 @@ sudo systemctl start docker.binfmt.service
 
 This should now work on **`ARM`** platforms such as **`arm64`**, **`arm64v8`**, **`arm32v7`**, `**aarch64**`.
 
+Alternatively, if sticking to the first option, cron is also another option to ensure it gets started on reboot by putting an entry into crontab.
+```yaml
+@reboot docker run --privileged --rm tonistiigi/binfmt --install all
+```
+or via (only adding x86_64)
+```yaml
+@reboot docker run --rm --privileged aptman/qus -s -- -p x86_64
+```
+
 ## Run Usage
 #### Docker Compose
 Via `compose.yml`

@@ -18,7 +18,7 @@ docker run --rm --privileged aptman/qus -s -- -p x86_64
 However, on reboot, the emulation must be re-enabled again. Therefore, cron can be used so that the cron scheduler will start the emulation on reboot.
 
 ```yaml
-sudo crontab
+sudo crontab -e
 ```
 
 Then add the entry and that's it.

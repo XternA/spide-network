@@ -91,7 +91,10 @@ Once you have an account head over to the [**dashboard**](https://spide.network/
 Give it a name for easy recognition and put in the device key that was obtained from the logs earlier.
 
 ## Like my work?
-Donations are warmly welcomed and thank you very much. 😌
-- **BTC:** bc1qq993w3mxsf5aph5c362wjv3zaegk37tcvw7rl4
-- **ETH:** 0x2601B9940F9594810DEDC44015491f0f9D6Dd1cA
-- **PayPal:** [@**xterna**](https://paypal.me/xterna)
+Donations are warmly welcomed no matter how small and thank you very much. 😌
+- **Bitcoin (BTC)** - `bc1qq993w3mxsf5aph5c362wjv3zaegk37tcvw7rl4`
+- **Ethereum (ETH)** - `0x2601B9940F9594810DEDC44015491f0f9D6Dd1cA`
+- **Binance (BNB)** - `bnb1dj3l3fp24z05vtwtjpaatjyz9sll4elu9lkjww`
+- **Binance Smart Chain (BSC)** - `0x2601B9940F9594810DEDC44015491f0f9D6Dd1cA`
+- **Solana (SOL)** - `Ap5aiAbnsLtR2XVJB3sp37qdNP5VfqydAgUThvdEiL5i`
+- **PayPal** - [@xterna](https://paypal.me/xterna)

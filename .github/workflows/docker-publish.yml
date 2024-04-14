@@ -28,5 +28,6 @@ jobs:
           context: .
           platforms: linux/amd64
           push: true
-          respository: xterna/${{ github.event.repository.name }}
-          tags: latest, ${{ github.ref_name }}
+          tags: |
+            xterna/${{ github.event.repository.name }}:latest
+            xterna/${{ github.event.repository.name }}${{ github.ref_name }}

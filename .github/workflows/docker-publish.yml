@@ -35,5 +35,5 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: |
-            "${{ github.repository_owner | lower }}/${{ github.event.repository.name }}:latest"
-            "${{ github.repository_owner | lower }}/${{ github.event.repository.name }}:${{ github.ref_name }}"
+            "${{ github.repository_owner.lowercase }}/${{ github.event.repository.name }}:latest"
+            "${{ github.repository_owner.lowercase }}/${{ github.event.repository.name }}:${{ github.ref_name }}"

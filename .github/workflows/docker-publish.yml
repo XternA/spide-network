@@ -29,5 +29,5 @@ jobs:
           platforms: "linux/amd64"
           push: true
           tags: |
-            "${{ github.repository }}:latest"
-            "${{ github.repository }}:${{ github.ref_name }}"
+            "${{ github.repository.lowercase }}:latest"
+            "${{ github.repository.lowercase }}:${{ github.ref_name }}"

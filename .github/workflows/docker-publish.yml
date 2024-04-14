@@ -24,12 +24,12 @@ jobs:
 
       - name: Build and push image tags
         uses: docker/build-push-action@v5
+        run: |
+            echo "REPO=${GITHUB_REPOSITORY@L}" >> "${USERNAME}"
         with:
           context: .
           platforms: linux/amd64
           push: true
-          run: |
-            echo "REPO=${GITHUB_REPOSITORY@L}" >> "${USERNAME}"
           respository: $ {{ $USERNAME }}/${{ github.event.repository.name }}
           tags: latest, ${{ github.ref_name }}
 

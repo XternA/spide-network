@@ -37,8 +37,6 @@ The non-native docker image will now run on **`ARM`** platforms such as **`arm64
 #### Docker Compose
 Via `compose.yml`
 ```yaml
-version: '3'
-
 services:
   spide:
     container_name: spide
@@ -67,7 +65,7 @@ To get the device key, you need to run the docker logs command to find the key f
 ```yaml
 docker logs spide
 ```
-```groovy
+```markdown
 2024/02/07 00:34:47 Build version: 2022-07-12_11:08:44AM-LINUX
 2024/02/07 00:34:47 ENV: prod
 2024/02/07 00:34:47 Device Key:  c253589lk23j523jkhasf904124kj1as8512972215kljasd04asd9085124as3r
@@ -76,9 +74,17 @@ docker logs spide
 2024/02/07 00:34:48 connect to server 159.223.219.217:50001
 2024/02/07 00:34:48 Status: OK
 ```
-If for any reason you can't locate the key, stop the container and start it again. Give it a second or two before fetching the logs again.
+Or
 ```yaml
-docker stop spide; docker start spide
+docker logs spide-test 2>&1 | grep "Device Key:"
+```
+```
+2024/02/07 00:34:47 Device Key:  c253589lk23j523jkhasf904124kj1as8512972215kljasd04asd9085124as3r
+```
+
+If for any reason you can't locate the key, restart the container. Give it a second or two before fetching the logs again.
+```yaml
+docker restart spide
 ```
 ### Spide Dashboard
 Register for an account if you haven't [**here**](https://spide.network/register.html?c315ee).

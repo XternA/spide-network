@@ -1,10 +1,13 @@
 # Spide Network Docker
+#### If you like this project, don't forget to leave a star. ⭐
 
 ### Containerised docker image for [Spide Network](https://spide.network/register.html?c315ee)
 
 >**Note:** This is an unofficial build and comes with no warranty of any kind. By using this image you also agree to [Spide Network's terms and conditions](https://spide.network/terms-of-use.html).
 
 The aim is to containerise the standard Linux CLI version of the binary into a dockerised container.
+
+> This docker image comes pre-bundled with [**Income Generator**](https://github.com/XternA/income-generator). A tool which consolidates and earns passive income from multiple sources.
 
 ## For ARM Platforms Only
 This section only applies to running on **`ARM`** platforms as the image and its underlying binary are originally compiled for **`x86_64`** (64-Bit) Intel/AMD-based architectures.

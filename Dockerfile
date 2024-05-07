@@ -4,6 +4,7 @@ LABEL author="XternA"
 LABEL description="Unofficial docker image of Spide Network."
 
 RUN apk update; apk add --no-cache curl unzip ca-certificates
+RUN rm -rf /etc/machine-id
 
 WORKDIR /app
 

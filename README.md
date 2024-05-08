@@ -9,6 +9,13 @@ The aim is to containerise the standard Linux CLI version of the binary into a d
 
 > This docker image comes pre-bundled with [**Income Generator**](https://github.com/XternA/income-generator). A tool which consolidates and earns passive income from multiple sources.
 
+## Usage 📃
+Define the following environment variable to bootstrap the image.
+
+| Variable | Description | Optional |
+| :--- | :--- | :---: |
+| **ID** | Require machine ID if reusing same device | YES |
+
 ## For ARM Platforms Only
 This section only applies to running on **`ARM`** platforms as the image and its underlying binary are originally compiled for **`x86_64`** (64-bit) Intel/AMD-based architectures.
 
